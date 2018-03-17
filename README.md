@@ -22,5 +22,8 @@ zappa deploy production
 ## Testing ##
 
 ```
+(inside virtualenv)
+hug -f tracking.py
+
 curl -X GET -v "localhost:8000/?id=1337&val=666&url=https%3A%2F%2Fgoogle.com"
 ```
