@@ -34,18 +34,18 @@ def track(id: fields.Integer(required=True),
 	"""
 	Save request parameters and redirect to url
 	"""
-	logger.info(str(id) + ': value: ' + str(val) + ' -> ' + str(url))
+	logger.info(f'{id}: value: {val} -> {url}')
 
 	# Save results is processed asynchronously
-	created = datetime.utcnow()
-	save_results(created, id, val)
+	save_results(id, val)
 
 	raise falcon.HTTPFound(url)
 
 @task
-def save_results(created, id, value):
+def save_results(id, value):
 	try:
+		created = datetime.utcnow()
 		sheet.append_row([created.isoformat(), id, value])
 	except Exception:
 		logger.exception('Saving results failed')
-		logger.error(str(id) + ': value: ' + str(val) + ' -> ' + str(url))
+		logger.error(f'{id}: value: {val} -> {url}')
