@@ -1,0 +1,14 @@
+{
+    "production": {
+        "app_function": "tracking.__hug_wsgi__",
+        "aws_region": "eu-central-1",
+        "profile_name": "default",
+        "runtime": "python3.6",
+        "s3_bucket": "zappa-XYXYXY",
+        "log_level": "INFO",
+        "project_name": "link-tracking",
+        "aws_environment_variables": {
+            "GOOGLE_SHEETS_ID": ""
+        }
+    }
+}
