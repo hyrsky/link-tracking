@@ -1,0 +1,5 @@
+zappa
+hug
+marshmallow
+oauth2client
+gspread
