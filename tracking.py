@@ -48,4 +48,4 @@ def save_results(id, value):
 		sheet.append_row([created.isoformat(), id, value])
 	except Exception:
 		logger.exception('Saving results failed')
-		logger.error(f'{id}: value: {val} -> {url}')
+		logger.error(f'{id}: value: {value} -> {url}')
